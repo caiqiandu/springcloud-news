@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.jk.mapper.NewsMapper">
+    <!--查询新闻数量-->
+  <select id="findNewsCount"  resultType="int">
+      select count(1) from t_news
+  </select>
+    <!--查询新闻列表-->
+    <select id="findNewsList" resultType="com.jk.model.News">
+        select * from t_news limit #{start},#{rows}
+    </select>
+    <!--批量删除新闻-->
+    <delete id="deleteNews">
+        delete from t_news where id in
+        <foreach collection="array" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+</mapper>

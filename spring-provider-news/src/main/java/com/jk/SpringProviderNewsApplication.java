@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @MapperScan("com.jk.mapper")
 public class SpringProviderNewsApplication {
-
+//wqq
     public static void main(String[] args) {
         SpringApplication.run(SpringProviderNewsApplication.class, args);
     }

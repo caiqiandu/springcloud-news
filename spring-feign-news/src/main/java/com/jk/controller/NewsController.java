@@ -24,6 +24,7 @@ public class NewsController {
     /*分页查询新闻列表*/
     @PostMapping("findNewsList")
     public HashMap<String,Object>findNewsList(Integer page, Integer rows, News news){
+        integer i=1;
         news.setPage(page);
         news.setRows(rows);
         HashMap<String,Object>NewsList=newsService.findNewsList(news);
